@@ -1,0 +1,19 @@
+Hanoi(from_tower, to_tower, helping_tower, count)
+
+there are A, B, C towers and S stack. target tower is C and initial disks are in A tower
+
+first do:
+Hanoi(A, B, C, n-m) means move n-m from A tower to B tower
+
+then:
+for i in range(m):
+    Stack.push(A.pop())
+means move the remaining disks in A tower to Stack
+
+after:
+for i in range(m):
+    C.push(Stack.pop())
+means move the m elements in Stack to C
+
+finally:
+Hanoi(B, C, A, n-m) means move the n-m elements which are currently in B tower to C tower
