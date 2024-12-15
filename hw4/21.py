@@ -8,7 +8,7 @@ for num in nums:
     bst.insert(num)
 bst.inorder_traversal()
 
-for _ in range(randint(1, 50)):
-    bst.delete(nums[randint(0, 49)])
+for i in range(25):
+    bst.delete(nums[i])
 
 bst.inorder_traversal()

@@ -83,6 +83,15 @@ class BinarySearchTree:
             return self.__search(root.left, value)
         return self.__search(root.right, value)
 
+    def __calculate_height(self, node: Node) -> int:
+        if node is None:
+            return -1
+
+        left_height = self.__calculate_height(node.left)
+        right_height = self.__calculate_height(node.right)
+
+        return max(left_height, right_height) + 1
+
     @staticmethod
     def __find_min(root: Node) -> Node:
         curr = root
@@ -118,8 +127,8 @@ class BinarySearchTree:
         self.__level_order_traversal(self._root)
         print(None)
 
-    def height(self) -> int:
-        return floor(log2(self._size))
+    def calculate_height(self) -> int:
+        return self.__calculate_height(self._root)
 
 
 
